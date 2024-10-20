@@ -1,4 +1,6 @@
-const Header = () => {
+import { Link } from "react-router-dom";
+
+const Header: React.FC = () => {
   return (
     <div>
       <header>
@@ -6,16 +8,16 @@ const Header = () => {
           <div className="logo">PlantShop</div>
           <ul className="nav-links">
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Sklep</a>
+              <Link to="/shop">Sklep</Link>
             </li>
             <li>
-              <a href="#">O nas</a>
+              <Link to="/aboutUs">O nas</Link>
             </li>
             <li>
-              <a href="#">Kontakt</a>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </nav>
