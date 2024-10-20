@@ -4,6 +4,7 @@ import ShopComponent from "./Searches/ShopComponent";
 import AboutUsComponent from "./Searches/AboutUs/AboutUsComponent";
 import KontaktComponent from "./Searches/Kontakt/KontaktComponent";
 import MainLayout from "../layouts/MainLayout";
+import NotFoundComponent from "./Searches/NotFound/NotFoundComponent";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             />
           }
         />
+        <Route path="*" element={<NotFoundComponent />} />
       </Route>
     </Routes>
   );
