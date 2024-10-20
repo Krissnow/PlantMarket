@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import ShopComponent from "./Searches/ShopComponent";
-import AboutUsComponent from "./Searches/AboutUsComponent";
+import AboutUsComponent from "./Searches/AboutUs/AboutUsComponent";
 import KontaktComponent from "./Searches/Kontakt/KontaktComponent";
 import MainLayout from "../layouts/MainLayout";
 
