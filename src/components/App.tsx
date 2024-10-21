@@ -2,9 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import ShopComponent from "./Searches/ShopComponent";
 import AboutUsComponent from "./Searches/AboutUs/AboutUsComponent";
-import KontaktComponent from "./Searches/Kontakt/KontaktComponent";
+import KontaktComponent from "./Searches/Contact/KontaktComponent";
 import MainLayout from "../layouts/MainLayout";
 import NotFoundComponent from "./Searches/NotFound/NotFoundComponent";
+import CartComponent from "./Searches/Cart/CartComponent";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<ShopComponent />} />
+        <Route path="/cart" element={<CartComponent />} />
         <Route path="/aboutUs" element={<AboutUsComponent />} />
         <Route
           path="/contact"

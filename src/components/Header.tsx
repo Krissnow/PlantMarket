@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import cartIcon from "../../public/cartIcon.png";
 
 const Header: React.FC = () => {
   return (
@@ -12,6 +13,11 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link to="/shop">Sklep</Link>
+            </li>
+            <li>
+              <Link to="/cart">
+                <img src={cartIcon} alt="Koszyk" className="cart_icon" />
+              </Link>
             </li>
             <li>
               <Link to="/aboutUs">O nas</Link>

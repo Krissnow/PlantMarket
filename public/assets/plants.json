@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "/public/image/MonsteraDeliciosa.jpg",
+    "title": "Monstera",
+    "fullTitle": "Monstera Deliciosa",
+    "size": "Medium",
+    "price": 79.99
+  },
+  {
+    "id": 2,
+    "imageUrl": "/public/assets/image/FicusLyrata.jpg",
+    "title": "Fiddle Leaf Fig",
+    "fullTitle": "Ficus Lyrata",
+    "size": "Large",
+    "price": 129.99
+  },
+  {
+    "id": 3,
+    "imageUrl": "/public/assets/image/SansevieriaTrifasciata.jpg",
+    "title": "Snake Plant",
+    "fullTitle": "Sansevieria Trifasciata",
+    "size": "Small",
+    "price": 49.99
+  },
+  {
+    "id": 4,
+    "imageUrl": "/public/assets/image/Spathiphyllum.jpg",
+    "title": "Peace Lily",
+    "fullTitle": "Spathiphyllum",
+    "size": "Medium",
+    "price": 59.99
+  },
+  {
+    "id": 5,
+    "imageUrl": "/public/assets/image/ZamioculcasZamiifolia.jpg",
+    "title": "ZZ Plant",
+    "fullTitle": "Zamioculcas Zamiifolia",
+    "size": "Small",
+    "price": 44.99
+  },
+  {
+    "id": 6,
+    "imageUrl": "/public/assets/image/ChamaedoreaSeifrizii.jpg",
+    "title": "Bamboo Palm",
+    "fullTitle": "Chamaedorea Seifrizii",
+    "size": "Large",
+    "price": 89.99
+  },
+  {
+    "id": 7,
+    "imageUrl": "/public/assets/image/FicusElastica.jpg",
+    "title": "Rubber Plant",
+    "fullTitle": "Ficus Elastica",
+    "size": "Medium",
+    "price": 69.99
+  },
+  {
+    "id": 8,
+    "imageUrl": "/public/assets/image/PhilodendronHederaceum.jpg",
+    "title": "Philodendron",
+    "fullTitle": "Philodendron Hederaceum",
+    "size": "Large",
+    "price": 99.99
+  },
+  {
+    "id": 9,
+    "imageUrl": "/public/assets/image/AloeBarbadensisMiller.jpg",
+    "title": "Aloe Vera",
+    "fullTitle": "Aloe Barbadensis Miller",
+    "size": "Small",
+    "price": 39.99
+  },
+  {
+    "id": 10,
+    "imageUrl": "/public/assets/image/ChlorophytumComosum.jpg",
+    "title": "Spider Plant",
+    "fullTitle": "Chlorophytum Comosum",
+    "size": "Small",
+    "price": 29.99
+  }
+]

@@ -41,6 +41,11 @@ header {
   text-decoration: underline;
 }
 
+.cart_icon {
+  width: 24px;
+  height: 24px;
+}
+
 .logo {
   font-size: 1.5em;
   font-weight: bold;
