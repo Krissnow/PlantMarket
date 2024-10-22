@@ -1,76 +1,70 @@
-import React, { useState } from "react";
-import styles from "./CartComponent.module.css";
+import React from "react";
 import CartEmpty from "./CartEmpty";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  clearItems,
+  selectCart,
+  TCartItem,
+} from "../../../redux/slices/cartSlice";
+import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
+import style from "./CartComponent.module.css";
 
-interface Plant {
-  id: number;
-  title: string;
-  price: number;
-  quantity: number;
-}
+const CartComponent: React.FC = () => {
+  const dispatch = useDispatch();
+  const { totalPrice, items } = useSelector(selectCart);
 
-interface CartComponentProps {
-  initialItems: Plant[]; // Początkowe rośliny w koszyku
-}
+  const totalCount = items.reduce(
+    (sum: number, item: { count: number }) => sum + item.count,
+    0
+  );
 
-const CartComponent: React.FC<CartComponentProps> = ({ initialItems }) => {
-  const [cartItems, setCartItems] = useState<Plant[]>(initialItems);
-
-  // Zwiększ ilość sztuk rośliny
-  const increaseQuantity = (id: number) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
+  const onClickClear = () => {
+    if (window.confirm("Opróżnić kosz?")) {
+      dispatch(clearItems());
+    }
   };
 
-  // Zmniejsz ilość sztuk rośliny
-  const decreaseQuantity = (id: number) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
-  };
-
-  // Oblicz całkowitą kwotę do zapłaty
-  const calculateTotal = () => {
-    return cartItems
-      .reduce((acc, item) => acc + item.price * item.quantity, 0)
-      .toFixed(2);
-  };
+  if (items.length === 0) {
+    return <CartEmpty />;
+  }
 
   return (
-    <div className={styles.cart}>
-      <h2>Twój koszyk</h2>
-      {cartItems.length === 0 ? (
-        <CartEmpty />
-      ) : (
-        <>
-          <ul className={styles.cartList}>
-            {cartItems.map((item) => (
-              <li key={item.id} className={styles.cartItem}>
-                <span className={styles.itemTitle}>{item.title}</span>
-                <span className={styles.itemPrice}>{item.price} zł</span>
-                <div className={styles.quantityControl}>
-                  <button onClick={() => decreaseQuantity(item.id)}>-</button>
-                  <span className={styles.quantity}>{item.quantity}</span>
-                  <button onClick={() => increaseQuantity(item.id)}>+</button>
-                </div>
-                <span className={styles.itemTotal}>
-                  Razem: {(item.price * item.quantity).toFixed(2)} zł
-                </span>
-              </li>
-            ))}
-          </ul>
-          <div className={styles.total}>
-            <h3>Całkowita kwota: {calculateTotal()} zł</h3>
+    <div className={`${style.container} ${style.container__cart}`}>
+      <div className={style.cart}>
+        <div className={style.cart__top}>
+          <h2 className={style.content__title}>Koszyk</h2>
+          <button onClick={onClickClear} className={style.cart__clear}>
+            <span>Wyczyść kosz</span>
+          </button>
+        </div>
+        <div className={style.content__items}>
+          {items.map((item: TCartItem) => (
+            <CartItem key={item.id} {...item} />
+          ))}
+        </div>
+        <div className={style.cart__bottom}>
+          <div className={style.cart__bottom_details}>
+            <span>
+              Roślin razem: <b>{totalCount} szt.</b>
+            </span>
+            <span>
+              Calkowita kwota: <b>{totalPrice} zł</b>
+            </span>
           </div>
-        </>
-      )}
+          <div className={style.cart__bottom_buttons}>
+            <Link
+              to="/"
+              className={`${style.button} ${style.button__outline} ${style.button__add} ${style.go_back_btn}`}
+            >
+              <span>Wróć</span>
+            </Link>
+            <div className={`${style.button} ${style.pay_btn}`}>
+              <span>Opłacić</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

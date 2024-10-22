@@ -14,10 +14,7 @@ const CartEmpty: React.FC = () => {
           Aby dodać roślinę do koszyka przejdź na stronę sklepu.
         </p>
         <img src={cartEmptyImg} alt="Empty cart" />
-        <Link
-          to="/shop"
-          className={`${style.button} ${style["button__green"]}`}
-        >
+        <Link to="/shop" className={`${style.button} ${style.button__green}`}>
           <span>Powrót do sklepu</span>
         </Link>
       </div>
